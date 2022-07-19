@@ -1,6 +1,6 @@
 for n_haplo in {2..3}; do
     echo $n_haplo
-sample=R02-00180
+sample=R02-00189
 mydir=/cluster/scratch8b/test_CV/CMV_Wellcome/mixed_infection/${sample}
 filelist=/cluster/scratch8b/test_CV/CMV_Wellcome/mixed_infection/${sample}/samples.txt
 log_file=nhaplo_${n_haplo}_harold_decideparameters.log
