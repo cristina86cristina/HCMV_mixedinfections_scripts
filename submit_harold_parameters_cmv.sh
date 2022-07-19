@@ -16,8 +16,8 @@ echo "
 
 #!/bin/bash -l
 #$ -S /bin/bash
-#$ -o ${mydir}/cluster/Haplo_n${n_haplo}.out
-#$ -e ${mydir}/cluster/Haplo_n${n_haplo}.error
+#$ -o ${mydir}/cluster/harold/Haplo_n${n_haplo}.out
+#$ -e ${mydir}/cluster/harold/Haplo_n${n_haplo}.error
 #$ -l h_rt=12:00:00
 #$ -l tmem=20.9G,h_vmem=20.9G
 #$ -N  haplo_${n_haplo}
