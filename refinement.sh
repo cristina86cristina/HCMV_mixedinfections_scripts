@@ -16,14 +16,20 @@ DIRLIB=/SAN/breuerlab/pathseq1/Cristina_home/src/HaROLD-2.0.0/lib
 REFIN=/SAN/breuerlab/pathseq1/Cristina_home/src/HaROLD-2.0.0/jar/RefineHaplotypes.jar
 
 
-mkdir ${mydir}/harold
-mkdir ${mydir}/harold/cluster
-
 
 echo "
 
 
-
+#!/bin/bash -l
+#$ -S /bin/bash
+#$ -o hardir/cluster/refinement_${sample}.out
+#$ -e hardir/cluster/refinement_${sample}.error
+#$ -l h_rt=12:00:00
+#$ -l tmem=20.9G,h_vmem=20.9G
+#$ -N  ref_${sample}
+#$ -wd ${mydir}
+#$ -V
+#$ -R y
 
 
 java -Xmx16g -Xms16g -cp ${DIRLIB}/htsjdk-unspecified-SNAPSHOT.jar:${DIRLIB}/picocli-4.1.2.jar:${DIRLIB}/pal-1.5.1.jar:${DIRLIB}/commons-math3-3.6.1.jar:${DIRLIB}/cache2k-all-1.0.2.Final.jar:${DIRLIB}/flanagan.jar:${REFIN} refineHaplotypes.RefineHaplotypes -t ${resdir}/${sample} --bam ${bamdir}/${sample}_diversity.bam --baseFreq ${harold1files}.lld --refSequence ${ref} --hapAlignment ${harold1files}.fasta --iterate
