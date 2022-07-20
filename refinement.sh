@@ -22,8 +22,8 @@ echo "
 
 #!/bin/bash -l
 #$ -S /bin/bash
-#$ -o hardir/cluster/refinement_${sample}.out
-#$ -e hardir/cluster/refinement_${sample}.error
+#$ -o ${hardir}/cluster/refinement_${sample}.out
+#$ -e ${hardir}/cluster/refinement_${sample}.error
 #$ -l h_rt=12:00:00
 #$ -l tmem=20.9G,h_vmem=20.9G
 #$ -N  ref_${sample}
